@@ -1,18 +1,22 @@
 ---
 title:  "Disk Shelf"
-mathjax: true
+mathjax: false
 layout: post
+tags: [NAS, Hardware]
 ---
 
 ![NAS Server](/images/diskshelf/nas.jpg)
 
 # Introduction
 
-Prior to the summer 2017 I was known for hosting services for just about anything friends had I minor
+Prior to the summer 2017 I was known for hosting services for just about anything friends had a minor
 interest for (lots of minecraft servers). Due to major life changes, I sold most of my hardware and left
 what ever remaining servers powerd off in storage. During christmas of 2019, I had taken 2-weeks off of 
 work and for the first time in months I had free time to myself. I finally decided to pull out my NAS
-server I assembled back in 2013, according to my newegg purchase history.
+server I assembled back in 2013.
+
+
+
 
 ## Specs (2013)
 
@@ -29,16 +33,16 @@ server I assembled back in 2013, according to my newegg purchase history.
 | OS           | FreeNAS |
 | UPS          | APC Pro 1500 |
 
-When booting up the server I noticed I had roughly 60% of my storage free, and if I was going to embark on
+When booting up the server I noticed I had roughly 60% of my storage used, and if I was going to embark on
 some of my new projects, I was going to need to add more storage space. The present case I had only fit 6
 drives, and my power supply only had 4 Sata Power connectors (I probably could have gotten 2 splitters at most
 if the rail supported it). So with 4 drives already installed I started browsing the internet for better solutions.
 That's when I cam across an endless amount of blogs/reddit posts of people building their own JBOD enclosures using
 an HP SAS Expander. It is highly recomended you don't use these on SATA drives if you care about your data, but the
-drives I would be connection were non crytical. Thus began my 12 bay hard drive expansion case.
+drives I would be connection are non crytical. Thus began my 12 bay hard drive expansion case.
 
 # Buying & Assembing the JBOD Case
-A few of the parts I already had sitting around. First off I already had a M105 raid card, case with 9 5.25-inch drives,
+A few of the parts I already had sitting around. First off I already had a M105 raid card, case with 9 x 5.25-inch drives,
 a GPU riser and an leftover power supply with 8 Molex ports. So I ordered the remaing parts I thought I would need for the
 build.
 

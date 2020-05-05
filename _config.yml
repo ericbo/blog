@@ -9,7 +9,7 @@ date_format: "%B %d, %Y"
 # Layout
 
 sidebar: false               # show a sidebar instead of the usual header
-show_excerpts: false         # show article excerpts on the home page
+show_excerpts: true          # show article excerpts on the home page
 show_related: true           # show the previous and next links after every post
 show_description: true       # show the site description in the sidebar
 show_title: false            # always keep the site title visible
@@ -18,18 +18,16 @@ show_title: false            # always keep the site title visible
 
 dark_header: false           # always keep the header dark
 minimal: false               # use simpler style
-remote_theme: niklasbuschmann/contrast@v2.8
 
 # Menu
 
 navigation:
   - {file: "index.html", icon: home}
-  - {file: "README.md", icon: address-card}
+  - {url: "https://recipes.bottazzi.ca", title: "Cooking Recipies"}
 
-external:                    # see http://fontawesome.com/icons
-#  - {title: Mail, icon: envelope, url: "mailto:niklasbuschmann@users.noreply.github.com"}
-#  - {title: Github, icon: github, url: "https://github.com/niklasbuschmann/contrast"}
-#  - {title: Subscribe, icon: rss, url: "/feed.xml"}
+external:
+  - {url: "https://ca.linkedin.com/in/ebottazzi", title: "Linkedin", icon: linkedin}
+  - {url: "https://github.com/ericbo", title: "Github", icon: github}
 
 comments:
 #  disqus_shortname: ""      # see https://disqus.com/
