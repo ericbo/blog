@@ -15,6 +15,8 @@ The issue with having a cluster of servers running my containerized apps is shar
 data between them. Because we have multiple Kubernetes client nodes, with no guarentee as to which 
 node will be running the container, I set out to find the simplest shared storage solution possible.
 
+
+
 # Using a CIFS/SMB 3.1.1
 Given that I already use SMB for sharing my media between my desktop, media server and other services
 I figured it would be a great solution for solving my container storage problem. Given that there is
