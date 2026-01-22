@@ -19,8 +19,8 @@ DNS and certificate management. I'll be using my local Proxmox server and some o
 
 # Access Controls
 The new tailscale services feature requires you to assign tags to any tailscale devices you wish to serve servies on. Considering
-my example has a proxmox server (using an unprivilaged pxe container for tailscale) and a docker VM using traefik, here's how
-I have configured my ACLs:
+my example has a proxmox server (using an unprivilaged [Tailscale in LXC containers](https://tailscale.com/kb/1130/lxc)) 
+and a docker VM using traefik, here's how I have configured my ACLs:
 
 ```yaml
 {
@@ -43,9 +43,6 @@ I have configured my ACLs:
 ```
 
 `autoApproves` will play an important role later on when spinning up our tailscale container.
-
-**Note:** My `pve-01` setup already covered by the offical [Tailscale in LXC containers](https://tailscale.com/kb/1130/lxc) video.
-This guide will focus primarily on getting Traefik to route tailnet domains.
 
 # Define Services
 Within the tailscale dashboard, under the `Services` tab, go ahead and define the same services we added to our `autoApprovers` list.
