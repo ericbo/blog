@@ -5,6 +5,8 @@ layout: post
 tags: [Tailscale, VPN, Docker, Traefik]
 ---
 
+![Topology](/images/docker-tailscale/topology.png)
+
 # Introduction
 Since humble beginnigs in 2012 when I built my first NAS, I have always managed a personal homelab. One of the biggest challenges 
 I always struggled with was accessing it remotely in a secure way. Originally I would port forwards services. Then over the past
@@ -48,6 +50,8 @@ This guide will focus primarily on getting Traefik to route tailnet domains.
 # Define Services
 Within the tailscale dashboard, under the `Services` tab, go ahead and define the same services we added to our `autoApprovers` list.
 Set Ports to `443` and make sure you match the `Service tags` to what was defined in your `autoApprovers`.
+
+![Add Service](/images/docker-tailscale/add-service.png)
 
 # Setting Up Traefik
 I will not go much into detail here as [Techno Tim](https://technotim.com/posts/traefik-3-docker-certificates) already has a great video 
@@ -200,9 +204,13 @@ docker exec tailscale tailscale serve status --json > ./tailscale/serve-config/s
 ```
 
 # Conclusion
-With both of these docker composes spun up, you should be able to access `https://traefik.<YOUR_TAILNET>.ts.net`. You will need
-to add your tailscale domain names to each of your containers (such as portainer and immich), see bellow for examples. Adding
-future containers to your stack will require you to repeat the following steps: Update Tailscale ACLs, define a service, update
+With both of these docker composes spun up, you should be able to access `https://traefik.<YOUR_TAILNET>.ts.net`.
+
+![Traefik](/images/docker-tailscale/traefik.png)
+
+You will need to add your tailscale domain names to each of your containers (such as portainer and immich), see appendix for examples.
+
+Adding future containers to your stack will require you to repeat the following steps: Update Tailscale ACLs, define a service, update
 your serve.json and assign the proper labels to your target container.
 
 ## Toubleshooting
