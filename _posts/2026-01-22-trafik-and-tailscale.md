@@ -35,7 +35,7 @@ I have configured my ACLs:
 		"services": {
 			"svc:pve-01":     ["tag:pve-01"],
 			"svc:docker-01":  ["tag:docker-01"],
-                        "svc:traefik-01": ["tag:docker-01"],
+            "svc:traefik-01": ["tag:docker-01"],
 			"svc:immich":     ["tag:docker-01"],
 		},
 	},
