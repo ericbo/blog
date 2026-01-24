@@ -27,18 +27,18 @@ and a docker VM using traefik, here's how I have configured my ACLs:
 ```yaml
 {
        ...
-	"tagOwners": {
-		"tag:pve-01":              ["autogroup:admin"],
-		"tag:docker-01":           ["autogroup:admin"],
+    "tagOwners": {
+        "tag:pve-01":              ["autogroup:admin"],
+        "tag:docker-01":           ["autogroup:admin"],
 	},
 
         ...
-	"autoApprovers": {
+    "autoApprovers": {
 		"services": {
-			"svc:pve-01":     ["tag:pve-01"],
-			"svc:docker-01":  ["tag:docker-01"],
+            "svc:pve-01":     ["tag:pve-01"],
+            "svc:docker-01":  ["tag:docker-01"],
             "svc:traefik-01": ["tag:docker-01"],
-			"svc:immich":     ["tag:docker-01"],
+            "svc:immich":     ["tag:docker-01"],
 		},
 	},
        ...
