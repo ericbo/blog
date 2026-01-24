@@ -17,6 +17,8 @@ With all this in mind, I have gone ahead and installed tailscale on every machin
 I have also decided to leverage [Tailscale Services](https://tailscale.com/kb/1552/tailscale-services) to do all my routing,
 DNS and certificate management. I'll be using my local Proxmox server and some of its containers to step through my setup.
 
+
+
 # Access Controls
 The new tailscale services feature requires you to assign tags to any tailscale devices you wish to serve servies on. Considering
 my example has a proxmox server (using an unprivilaged [Tailscale in LXC containers](https://tailscale.com/kb/1130/lxc)) 
@@ -114,6 +116,7 @@ to combine it with my Traefik compose. You can even go the extra mile and isolat
 allow it to communicate with traefik.
 
 ## Compose
+
 ```yaml
 services:
   tailscale:
@@ -189,6 +192,7 @@ The simpliest way I have found to do this is by calling `tailscale serve` direct
 Here's how I did it for my 3 services:
 
 ### Defining Services
+
 ```bash
 docker exec tailscale tailscale serve --https=443 --service=svc:traefik-01 https+insecure://traefik:443
 docker exec tailscale tailscale serve --https=443 --service=svc:docker-01 https+insecure://traefik:443
@@ -196,6 +200,7 @@ docker exec tailscale tailscale serve --https=443 --service=svc:immich https+ins
 ```
 
 ### Dumping the Config
+
 ```bash
 docker exec tailscale tailscale serve status --json > ./tailscale/serve-config/serve.json
 ```
@@ -215,6 +220,7 @@ If you are having troubles routing, check your tailscale logs by running `docker
 
 # Appendix
 ## Example Immich Labels
+
 ```yaml
     labels:
       - "traefik.enable=true"
@@ -227,6 +233,7 @@ If you are having troubles routing, check your tailscale logs by running `docker
 ```
 
 ## Example Portainer Labels
+
 ```yaml
     labels:
       - "traefik.enable=true"
